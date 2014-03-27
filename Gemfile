@@ -34,6 +34,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'database_cleaner'
+  gem 'capistrano', '2.14.2'
 end
 
 group :travis do
