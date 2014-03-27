@@ -17,11 +17,11 @@ gem 'rails-observers', '~> 0.1.2'
 gem 'jquery-ui-rails'
 
 group :production do
-  gem 'pg'
+  gem 'mysql2'
   # This helps with serving assets and log files on the heroku platform.
   # See https://github.com/heroku/rails_12factor
   # https://devcenter.heroku.com/articles/rails4#logging-and-assets
-  gem 'rails_12factor'
+  # gem 'rails_12factor'
 end
 
 group :development, :test do
