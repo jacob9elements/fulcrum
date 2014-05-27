@@ -5,7 +5,7 @@
 @import 'popover';
 @import 'icons';
 
-$darkgrey:   #6a7176;           // Header color
+$darkgrey:   #3a4655;           // Header color
 $orange:     rgb(250,182,155);  // Estimate gauge color
 
 // Tango icon theme pallette
@@ -41,31 +41,33 @@ $aluminium-6:   #2e3436;
 body {
   margin: 0;
   padding: 0;
+  background-color: #efefef;
 }
 
 a img {
   border: 0;
 }
 
+a:visited {
+  color: #ffffff;
+}
+ 
 #header {
   background: $darkgrey;
-  @include background(linear-gradient(top, $darkgrey, $darkgrey*0.75));
-  border-bottom: 1px solid $darkgrey*0.7;
-  @include box-shadow(0 1px 2px #aaaaaa);
-  text-shadow: black 0 1px 0;
   position: relative;
   z-index: 900;
 }
 
 ul#primary-nav {
   text-align: right;
-  background-image: image-url('logo.png');
-  background-repeat: no-repeat;
-  background-position: 13px 6px;
   margin: 0;
-  padding: 1em 1em 1em 40px;
+  padding: 0;
   color: white;
+  display: table;
+  width: 100%;
+  line-height: 40px;
 }
+
 ul#primary-nav li {
   padding: 0 0.5em;
   display: inline;
@@ -75,18 +77,16 @@ ul#primary-nav li a {
   text-decoration: none;
 }
 ul#primary-nav li.root {
-  float: left;
   font-size: large;
 }
 ul#primary-nav li.secondary {
   position: relative;
   @include icons-sprite(collapse, false, 0px, 6px);
-  background-color: #333;
+
   background-position-x:right;
   padding: 0.4em 18px 0.4em 0.4em;
-  @include border-radius(5px);
-  text-shadow: black 0 1px 0;
 }
+
 ul#primary-nav li.secondary ul {
   visibility: hidden;
 }
@@ -107,34 +107,25 @@ ul#primary-nav li.secondary ul li {
 }
 
 #title_bar {
-  background: #efefef;
-  @include background(linear-gradient(top, #efefef, #dfe1e2));
-  @include box-shadow(0 1px 2px #aaaaaa);
-  text-shadow: white 0 1px 0;
+  background-color: #2b343f;
   border-bottom: 1px solid #ededed;
-  padding: 5px 10px 3px 10px;
-  font-size: 1.0em;
-  line-height: 140%;
-  margin-bottom: 0.5em;
-  color: #5e6469;
-  position: relative;
+  font-size: 13px;
+  line-height: 40px;
+  color: #ffffff;
   margin: 0;
-  padding: 10px 1em;
-
+ 
   div.velocity {
-    font-size: 1.6em;
-    float: right;
-    position: relative;
-
+    display: table-cell;
+    font-size: 13px;
+    width: 33%;
+    text-align: center;
+    
     div.velocity_override_container {
       width: 220px;
       position: absolute;
       right: 0;
       top: 30px;
       background: #efefef;
-      border: 1px solid #ccc;
-      @include border-radius(3px);
-      @include single-box-shadow;
       z-index: 1;
 
       ul {
@@ -148,7 +139,6 @@ ul#primary-nav li.secondary ul li {
 
     #velocity_value {
       cursor: pointer;
-      font-weight:bold;
     }
   }
 
@@ -158,19 +148,21 @@ ul#primary-nav li.secondary ul li {
   }
 
   #add_story {
-    @include background(sprite($icons-sprites, feature, 2, 2),
-                        linear-gradient(top, $aluminium-3, $aluminium-3*0.75));
-    background-repeat: no-repeat;
+    display: table-cell;
+    text-align: left;
     margin: 0;
-    padding: 0.2em 0.4em 0.2em 18px;
-    @include border-radius(3px);
-    border: 1px solid $aluminium-5;
+    padding-left: 15px;
     cursor: pointer;
-    font-size: small;
-    color: white;
-    text-shadow:  $aluminium-5 0 1px 0;
-    text-decoration: none;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: normal;
+    width: 33%;
   }
+}
+
+#title_bar {
+  display: table;
+  width: 100%;
 }
 
 #title_bar h1 {
@@ -188,15 +180,18 @@ html.stories, html.stories body, html.stories div#main {
 }
 
 #column-toggles {
-  float: right;
+  display: table-cell;
+  width: 33%;
+  text-align: right;
+  padding-right: 15px;
 }
 
 #column-toggles a {
   margin: 0 0.2em;
-  padding: 3px;
+  padding: 6px;
   color: white;
   background-color: $darkgrey;
-  @include border-radius(3px);
+  @include border-radius(4px);
   text-decoration: none;
   text-shadow: none;
 }
@@ -216,29 +211,37 @@ table.stories {
 table.stories td {
   vertical-align: top;
   background-color: #ccc;
-  @include border-radius(5px 5px 0 0);
+  @include border-radius(7px 7px 0 0);
+  padding: 0px;
 }
 
 div.storycolumn {
   overflow: auto;
   padding-bottom: 80px;
+  width: calc(100% - 2px);
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-top: none;
 }
 
 /* Story columns headers */
 .column_header {
   text-align: left;
   background: $darkgrey;
-  @include background(linear-gradient(top, $darkgrey, $darkgrey*0.75));
   color: #eee;
-  padding: 0.2em 0.2em 0.2em 1em;
+  padding: 0px 10px 0px 10px;
   text-transform:capitalize;
-  @include border-radius(5px 5px 0 0);
+  border: 0px solid $darkgrey;
+  line-height: 40px;
+  @include border-radius(6px 6px 0 0);
+  font-size: 11px;
   a.toggle-column{
-    color: #eee;
+    color: #fff;
     text-decoration: none;
     float: right;
     padding: 0px 5px 1px;
     cursor: pointer;
+    font-size: 18px;
     &:hover{
       color:$aluminium-3;
     }
@@ -247,12 +250,11 @@ div.storycolumn {
 
 /* Story types */
 div.story {
-  padding: 0.3em;
-  background-repeat: no-repeat;
-  background-position: 4px 4px;
-  background-color: #eee;
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #fff;
+  padding: 17px 10px 17px 10px;
+  min-height: 34px;
+  vertical-align: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
 }
 div.story:hover {
   background-color: #ddd;
@@ -267,7 +269,7 @@ div.story.editing, div.story.editing:hover {
 div.story.feature.accepted,
 div.story.bug.accepted,
 div.story.chore.accepted{
-  background-color: adjust-lightness($chameleon-1, 40);
+  background-color: #f9fff2;
 }
 div.story input[type=text],
 div.story textarea {
@@ -366,6 +368,40 @@ span.estimate_8 {
   background-color: #222;
 }
 
+#project-name-title {
+  font-size: 13px;
+  display: table-cell;
+  text-align: left;
+  width: 33%;
+  padding-left: 15px;
+  font-weight: normal;
+}
+
+#project-menu {
+  display: table-cell;
+  text-align: center;
+  width: 33%;
+}
+
+#user-login-controls {
+  display: table-cell;
+  text-align: right;
+  width: 33%;
+  padding-right: 15px;
+}
+
+#project-menu-wrapper {
+  display: table;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.project-menu-bullet {
+  display: table-cell;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 /* Story action buttons */
 .state-actions {
   float: right;
@@ -378,10 +414,10 @@ span.estimate_8 {
 
 /* Iteration markers */
 .iteration {
-  @include icons-sprite(iteration, false, 2px, 3px);
-  background-color: #000;
-  color: #ddd;
-  padding: 0.2em 0.2em 0.2em 20px
+  background-color: #fafafa;
+  color: #000000;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0e0e0;
 }
 .iteration .points {
   float: right;
@@ -486,7 +522,6 @@ a.button {
 
 
 a.button:hover {
-  @include background(linear-gradient(top, $chameleon-2, $chameleon-3));
   color: white;
   text-shadow: $darkgrey 0 1px 0;
 }
