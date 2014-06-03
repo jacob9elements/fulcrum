@@ -1,8 +1,15 @@
-<% content_for :title_bar do %>
-  <%= render :partial => 'projects/nav', :locals => {:project => @project} %>
+<% content_for :project_title_bar do%>
+  <h1 id="project-name-title"><%= @project.name %></h1>
+  <div id="project-menu">
+    <div id="project-menu-wrapper">
+      <div class="project-menu-bullet"><%= link_to_unless_current Story.model_name.human(:count => 2), project_path(@project) %></div>
+      <div class="project-menu-bullet"><%= link_to_unless_current User.model_name.human(:count => 2), project_users_path(@project) %></div>
+      <div class="project-menu-bullet"><%= link_to_unless_current t('edit'), edit_project_path(@project) %></div>
+      <div class="project-menu-bullet"><%= link_to_unless_current t('import'), import_project_stories_path(@project) %></div>
+      <div class="project-menu-bullet"><%= link_to t('export'), project_stories_path(@project, :format => :csv) %></div>
+    </div>
+  </div>
 <% end %>
-
-<h2>Import stories</h2>
 
 <p>
 You can bulk import stories in comma separated variable (CSV) format.  The
