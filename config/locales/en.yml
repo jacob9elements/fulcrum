@@ -41,7 +41,7 @@ en:
   n weeks:
     one: '1 week'
     other: '%{count} weeks'
-  
+
   keycuts:
     keyboard_shortcuts: Keyboard shortcuts
     help: Help (this)
@@ -55,7 +55,7 @@ en:
     toggle_my_work: Toggle my work
     toggle_labels_searches: Toggle labels &amp; searches
     toggle_current: Toggle current
-  
+
   activerecord:
     models:
       user:
@@ -100,7 +100,7 @@ en:
     project was successfully updated: "Project was successfully updated."
 
     index:
-      listing projects: "Listing Projects"
+      listing projects: "List of projects"
       are you sure you want to delete this project: "Are you sure you want to delete this project?  This action cannot be undone."
       the iteration starts on x with length of x weeks:
         one:    "Iterations start on %{day} with a length of 1 week"
