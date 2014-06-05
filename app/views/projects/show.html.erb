@@ -8,11 +8,19 @@ $(function() {
   project.users.reset(<%= @project.users.to_json.html_safe %>);
   project.current_user = new Fulcrum.User(<%= current_user.to_json.html_safe %>);
 
-  var doneColumn = new Fulcrum.ColumnView({
-    id: 'done', name: '<%= t('.done') %>', el: $('td.done_column'), sortable: false
+  var chillyBinColumn = new Fulcrum.ColumnView({
+    id: 'chilly_bin', name: '<%= t('.icebox') %>', el: $('td.chilly_bin_column'),
+    sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: doneColumn}).render().el
+    new Fulcrum.ColumnVisibilityButtonView({columnView: chillyBinColumn, elementId: 'chilly_bin'}).render().el
+  );
+
+  var backlogColumn = new Fulcrum.ColumnView({
+    id: 'backlog', name: '<%= t('.backlog') %>', el: $('td.backlog_column'), sortable: true
+  }).render();
+  $('#column-toggles').append(
+    new Fulcrum.ColumnVisibilityButtonView({columnView: backlogColumn}).render().el
   );
 
   var inProgressColumn = new Fulcrum.ColumnView({
@@ -23,19 +31,11 @@ $(function() {
     new Fulcrum.ColumnVisibilityButtonView({columnView: inProgressColumn}).render().el
   );
 
-  var backlogColumn = new Fulcrum.ColumnView({
-    id: 'backlog', name: '<%= t('.backlog') %>', el: $('td.backlog_column'), sortable: true
+  var doneColumn = new Fulcrum.ColumnView({
+    id: 'done', name: '<%= t('.done') %>', el: $('td.done_column'), sortable: false
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: backlogColumn}).render().el
-  );
-
-  var chillyBinColumn = new Fulcrum.ColumnView({
-    id: 'chilly_bin', name: '<%= t('.icebox') %>', el: $('td.chilly_bin_column'),
-    sortable: true
-  }).render();
-  $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: chillyBinColumn, elementId: 'chilly_bin'}).render().el
+    new Fulcrum.ColumnVisibilityButtonView({columnView: doneColumn}).render().el
   );
 
   // FIXME Move to view
@@ -93,17 +93,10 @@ $(function() {
 <table class="stories" width="100%">
   <tbody>
     <tr>
-    <% if !Fulcrum::Application.config.fulcrum.column_order or Fulcrum::Application.config.fulcrum.column_order != 'progress_to_right' %>
-      <td class="done_column" style="width: 25%"></td>
-      <td class="in_progress_column" style="width: 25%"></td>
-      <td class="backlog_column" style="width: 25%"></td>
-      <td class="chilly_bin_column" style="width: 25%"></td>
-    <% elsif Fulcrum::Application.config.fulcrum.column_order == 'progress_to_right' %>
       <td class="chilly_bin_column" style="width: 25%"></td>
       <td class="backlog_column" style="width: 25%"></td>
       <td class="in_progress_column" style="width: 25%"></td>
       <td class="done_column" style="width: 25%"></td>
-    <% end %>
     </tr>
   </tbody>
 </table>
