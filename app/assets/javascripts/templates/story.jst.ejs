@@ -19,7 +19,7 @@
   <% if (view.saveInProgress) { %>
   <a class="icon icons-throbber" title="<%= I18n.t('saving') %>"></a>
   <% } %>
-  <span class="popover-activate">
+  <span>
     <span class="icon icons-<%= story.get('story_type') %> story_type" title="<%= story.story_type %>: <%= story.id %>">
       <%= story.story_type %>
     </span>
