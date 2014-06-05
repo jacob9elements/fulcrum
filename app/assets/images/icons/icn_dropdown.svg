@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>icn_dropdown</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M4.36278871,5.24009585 C4.71471079,5.65977932 5.28314768,5.66022277 5.64342653,5.22788814 L9.35657329,0.772111858 C9.71192795,0.345686251 9.54291148,-5.16795784e-09 9.00149165,-5.15659338e-09 L0.96725818,-4.98795404e-09 C0.415797347,-4.97637883e-09 0.253667379,0.339777227 0.605961302,0.759904142 L4.36278871,5.24009585 Z" id="icn_dropdown" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

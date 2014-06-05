@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>icn_close</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M10.125,11.25 C9.8145,11.25 9.53325,11.124 9.329625,10.920375 L6.000375,7.591125 L2.67075,10.920375 C2.467125,11.124 2.185875,11.25 1.875,11.25 C1.254,11.25 0.75,10.746375 0.75,10.125 C0.75,9.8145 0.876,9.53325 1.079625,9.329625 L4.40925,6 L1.079625,2.67075 C0.876,2.46675 0.75,2.185875 0.75,1.875 C0.75,1.253625 1.254,0.75 1.875,0.75 C2.185875,0.75 2.467125,0.876 2.67075,1.079625 L6.000375,4.40925 L9.329625,1.079625 C9.53325,0.876 9.8145,0.75 10.125,0.75 C10.746375,0.75 11.250375,1.253625 11.250375,1.875 C11.250375,2.185875 11.124375,2.46675 10.92075,2.67075 L7.591125,6 L10.92075,9.329625 C11.124375,9.53325 11.250375,9.8145 11.250375,10.125 C11.250375,10.746375 10.746375,11.25 10.125,11.25 L10.125,11.25 Z" id="icn_close" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
