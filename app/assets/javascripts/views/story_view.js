@@ -471,8 +471,13 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
       delayIn: 50,
       placement: view.hoverBoxPlacement,
       html: true,
-      live: true
+      animation: true,
+      trigger: 'hover'
     });
+
+    // Ugly hack that removes the hover box when dragging a storycard to another
+    // column.
+    setTimeout(view.removeHoverbox, 10);
   },
 
   hoverBoxPlacement: function() {
