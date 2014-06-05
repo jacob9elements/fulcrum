@@ -459,7 +459,7 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
   // FIXME Move to separate view
   hoverBox: function(){
     var view  = this;
-    this.$el.find('.popover-activate').popover({
+    this.$el.popover({
       title: function(){
         return view.model.get("title");
       },
@@ -468,7 +468,7 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
       },
       // A small delay to stop the popovers triggering whenever the mouse is
       // moving around
-      delayIn: 200,
+      delayIn: 50,
       placement: view.hoverBoxPlacement,
       html: true,
       live: true
