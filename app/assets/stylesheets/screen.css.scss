@@ -176,7 +176,6 @@ ul#primary-nav li.secondary ul li {
 }
 
 #main {
-  margin: 1em;
   position: relative;
 }
 
@@ -210,7 +209,7 @@ html.stories, html.stories body, html.stories div#main {
 table.stories {
   width: 100%;
   height: 100%;
-  border-spacing: 5px 0;
+  border-spacing: 10px;
 }
 
 table.stories td {
@@ -255,7 +254,6 @@ div.storycolumn {
 
 /* Story types */
 div.story {
-  padding: 17px 10px 17px 10px;
   min-height: 34px;
   vertical-align: center;
   background-color: #ffffff;
@@ -284,18 +282,25 @@ div.story textarea {
   height: 50px;
 }
 
-div.story-icons {
-  float: left;
-  font-size: 0;
+.story-action-bar {
+  display: table;
+  border-spacing: 10px 0px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
+
 div.story-controls {
   padding: 10px 0;
 }
 div.story-title {
   width: 100%;
   display: table;
-  padding-top: 10px;
 }
+
+div.story-description {
+  padding-bottom: 10px;
+}
+
 .unestimated div.story-title {
   font-style: italic;
 }
@@ -325,6 +330,14 @@ span.estimate {
   text-align: center;
   font-size: 11px;
   text-shadow: white 0px 1px 0px;
+}
+
+span.estimate_0 {
+  @include background(linear-gradient(bottom,
+      $light 0%,
+      $verylight 4%,
+      white 4%,
+      $verylight 100%));
 }
 
 span.estimate_1 {
@@ -431,8 +444,7 @@ span.estimate_8 {
 
 /* Story action buttons */
 .state-actions {
-  float: right;
-  margin-left: 0.2em;
+  display: table-cell;
 }
 
 .state-actions form div, .state-actions form {
