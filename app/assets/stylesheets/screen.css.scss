@@ -7,16 +7,15 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 $darkgrey:   #3a4655;           // Header color
-$orange:     rgb(250,182,155);  // Estimate gauge color
+$lightgrey:  #6b7686;
+$light:      rgb(230,230,230);  // Estimate gauge color
+$verylight:  rgb(240, 240, 240);
 
 // Tango icon theme pallette
 // http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
 $butter-1:      #fce94f;
 $butter-2:      #edd400;
 $butter-3:      #c4a000;
-$orange-1:      #fcaf3e;
-$orange-2:      #f57900;
-$orange-3:      #ce5c00;
 $chocolate-1:   #e9b96e;
 $chocolate-2:   #c17d11;
 $chocolate-3:   #8f5902;
@@ -293,7 +292,9 @@ div.story-controls {
   padding: 10px 0;
 }
 div.story-title {
-  margin-left: 50px;
+  width: 100%;
+  display: table;
+  padding-top: 10px;
 }
 .unestimated div.story-title {
   font-style: italic;
@@ -315,55 +316,72 @@ div.story-title abbr.initials {
 }
 
 span.estimate {
-  border: 1px solid #777;
-  padding: 0 0.2em;
-  margin: 0 2px 0 0;
+  display: table-cell;
+  width: 32px;
+  height: 32px;
+  border: none;
   @include border-radius(3px);
-  vertical-align: top;
-  font-size: x-small;
-  font-weight: bold;
-  font-style: italic;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 11px;
+  text-shadow: white 0px 1px 0px;
 }
 
 span.estimate_1 {
   @include background(linear-gradient(bottom,
-      $orange 12.5%,
-      white 12.5%));
+      $light 0%,
+      $verylight 12.5%,
+      white 12.5%,
+      $verylight 100%));
 }
 span.estimate_2 {
   @include background(linear-gradient(bottom,
-      $orange 25%,
-      white 25%));
+      $light 0%,
+      $verylight 25%,
+      white 25%,
+      $verylight 100%));
 }
 span.estimate_3 {
   @include background(linear-gradient(bottom,
-      $orange 37.5%,
-      white 37.5%));
+      $light 0%,
+      $verylight 37.5%,
+      white 37.5%,
+      $verylight 100%));
 }
 span.estimate_4 {
   @include background(linear-gradient(bottom,
-      $orange 50%,
-      white 50%));
+      $light 0%,
+      $verylight 50%,
+      white 50%,
+      $verylight 100%));
 }
 span.estimate_5 {
   @include background(linear-gradient(bottom,
-      $orange 62.5%,
-      white 62.5%));
+      $light 0%,
+      $verylight 62.5%,
+      white 62.5%,
+      $verylight 100%));
 }
 span.estimate_6 {
   @include background(linear-gradient(bottom,
-      $orange 75%,
-      white 75%));
+      $light 0%,
+      $verylight 75%,
+      white 75%,
+      $verylight 100%));
 }
 span.estimate_7 {
   @include background(linear-gradient(bottom,
-      $orange 87.5%,
-      white 87.5%));
+      $light 0%,
+      $verylight 87.5%,
+      white 87.5%,
+      $verylight 100%));
 }
 span.estimate_8 {
   @include background(linear-gradient(bottom,
-      $orange 100%,
-      white 100%));
+      $light 0%,
+      $verylight 100%,
+      white 100%,
+      $verylight 100%));
 }
 
 .story.release {
@@ -433,18 +451,26 @@ span.estimate_8 {
 }
 
 .state-actions input {
+  height: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
   margin: 0;
-  padding: .2em .5em;
   @include border-radius(3px);
-  border: 1px solid #333;
+  border: none;
   cursor: pointer;
-  font-size: x-small;
+  font-size: 11px;
   color: white;
-  @include background(linear-gradient(top, $aluminium-3, $aluminium-3*0.75));
-  border-color: $aluminium-5;
-  text-shadow:  $aluminium-5 0 1px 0;
-  @include box-shadow(0 1px 2px #aaaaaa);
+  background-color: $darkgrey;
 }
+
+.estimate {
+  width: 32px;
+  padding: 0px;
+}
+
 .story.release .state-actions input {
   @include box-shadow(0 1px 2px #000);
 }
@@ -452,28 +478,30 @@ span.estimate_8 {
   @include box-shadow(none);
 }
 
+.state-actions input:hover {
+  background-color: $lightgrey;
+}
+
 .state-actions input.finish {
-  @include background(linear-gradient(top, $sky-blue-1, $sky-blue-1*0.75));
-  border-color: $sky-blue-3;
+  @include background($sky-blue-1);
+  width: 64px;
 }
 .state-actions input.deliver {
-  @include background(linear-gradient(top, $butter-1, $butter-1*0.75));
-  border-color:     $butter-3;
+  @include background($butter-1);
+  color: black;
+  width: 64px;
 }
 .state-actions input.accept {
-  @include background(linear-gradient(top, $chameleon-2, $chameleon-2*0.75));
-  border-color: $chameleon-3;
+  @include background($chameleon-2);
+  width: 64px;
 }
 .state-actions input.reject {
-  @include background(linear-gradient(top, $scarlet-red-1, $scarlet-red-1*0.75));
-  border-color:     $scarlet-red-3;
+  @include background($scarlet-red-1);
+  width: 64px;
 }
 .state-actions input.restart {
-  @include background(sprite($icons-sprites,redo),
-                      linear-gradient(top, $scarlet-red-1, $scarlet-red-1*0.75));
-  background-repeat: no-repeat;
-  border-color: $scarlet-red-3;
-  padding-left: 16px;
+  @include background($scarlet-red-1);
+  width: 64px;
 }
 
 table#import tr.valid, .notice {
@@ -524,15 +552,14 @@ ul#projects li:hover {
 }
 
 a.button {
-  background: #efefef;
-  @include background(linear-gradient(top, #efefef, #dfe1e2));
+  background: $darkgrey;
   @include box-shadow(0 1px 2px #aaaaaa);
-  text-shadow: white 0 1px 0;
+  text-shadow: black 0 1px 0;
   @include border-radius(5px);
   border: 1px solid $darkgrey*1.5;
   text-decoration: none;
   margin: 10px;
-  color: black;
+  color: white;
   padding: 5px;
 }
 
