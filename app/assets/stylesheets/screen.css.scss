@@ -401,6 +401,9 @@ span.estimate_8 {
   display: table-cell;
   padding-left: 5px;
   padding-right: 5px;
+  a, a:visited {
+    color: white;
+  }
 }
 
 /* Story action buttons */
