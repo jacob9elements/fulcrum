@@ -4,6 +4,7 @@
 @import 'jquery_tagit';
 @import 'popover';
 @import 'icons';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 $darkgrey:   #3a4655;           // Header color
 $orange:     rgb(250,182,155);  // Estimate gauge color
@@ -37,6 +38,10 @@ $aluminium-3:   #babdb6;
 $aluminium-4:   #888a85;
 $aluminium-5:   #555753;
 $aluminium-6:   #2e3436;
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
 
 body {
   margin: 0;
@@ -235,7 +240,7 @@ div.storycolumn {
   border: 0px solid $darkgrey;
   line-height: 40px;
   @include border-radius(6px 6px 0 0);
-  font-size: 11px;
+  font-size: 13px;
   a.toggle-column{
     color: #fff;
     text-decoration: none;
@@ -401,6 +406,9 @@ span.estimate_8 {
   display: table-cell;
   padding-left: 5px;
   padding-right: 5px;
+  a, a:visited {
+    color: white;
+  }
 }
 
 /* Story action buttons */
